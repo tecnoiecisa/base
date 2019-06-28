@@ -1,0 +1,25 @@
+spring:
+  profiles: test
+  name: test-YAML
+  environment: test
+  
+#Data base configuration
+  datasource: 
+    url: jdbc:mysql://localhost/test
+    username: admin
+    password: admin
+    driver-class-name: com.mysql.jdbc.Driver
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
