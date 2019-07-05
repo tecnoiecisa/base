@@ -1,26 +1,68 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>es.iecisa</groupId>
-    <artifactId>arquitectura</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <groupId>es.iecisa</groupId>
-  <artifactId>Web</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>Web</name>
-  <url>http://maven.apache.org</url>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>es.iecisa</groupId>
+		<artifactId>arquitectura</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>Web</artifactId>
+	<name>Web</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<!-- Profile configuration -->
+	<profiles>
+		<!-- The configuration of the development profile -->
+		<profile>
+			<id>dev</id>
+			<!-- The development profile is active by default -->
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<!-- Specifies the build.profile.id property that must be equal than 
+					the name of the directory that contains the profile specific configuration 
+					file. Because the name of the directory that contains the configuration file 
+					of the development profile is dev, we must set the value of the build.profile.id 
+					property to dev. -->
+				<build.profile.id>dev</build.profile.id>
+			</properties>
+		</profile>
+		<!-- The configuration of the production profile -->
+		<profile>
+			<id>prod</id>
+			<properties>
+				<!-- Specifies the build.profile.id property that must be equal than 
+					the name of the directory that contains the profile specific configuration 
+					file. Because the name of the directory that contains the configuration file 
+					of the production profile is prod, we must set the value of the build.profile.id 
+					property to prod. -->
+				<build.profile.id>prod</build.profile.id>
+			</properties>
+		</profile>
+		<!-- The configuration of the testing profile -->
+		<profile>
+			<id>test</id>
+			<properties>
+				<!-- Specifies the build.profile.id property that must be equal than 
+					the name of the directory that contains the profile specific configuration 
+					file. Because the name of the directory that contains the configuration file 
+					of the testing profile is test, we must set the value of the build.profile.id 
+					property to test. -->
+				<build.profile.id>test</build.profile.id>
+			</properties>
+		</profile>
+	</profiles>
 </project>
